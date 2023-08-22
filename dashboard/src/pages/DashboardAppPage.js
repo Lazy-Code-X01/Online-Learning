@@ -56,7 +56,7 @@ export default function DashboardAppPage() {
     // Make an API request to retrieve login times
     // Fetch login times
     axios
-      .get(`http://localhost:5000/api/admin/${userInfo._id}/loginTimes`)
+      .get(`https://onlinelearning-oaek.onrender.com/api/admin/${userInfo._id}/loginTimes`)
       .then((response) => {
         const loginTimes = response.data;
 
