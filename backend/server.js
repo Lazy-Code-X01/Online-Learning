@@ -20,15 +20,17 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
-app.use(cors({ origin: 'http://localhost:3000' }));
-// Configure CORS
+// Configure CORS middleware
 app.use(
-    cors({
-      origin: true, // This will dynamically set the allowed origin based on the request's origin
-      credentials: true, // Allow cookies and other credentials in cross-origin requests
-    })
+  cors({
+    origin: [
+      'http://localhost:3000',
+      'https://uc-ms.vercel.app',
+    ],
+    methods: ['POST', 'GET'],
+    credentials: true
+  })
 );
-  
 
 
 app.use(cookieParser())
